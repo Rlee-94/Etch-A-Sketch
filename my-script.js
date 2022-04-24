@@ -10,6 +10,7 @@ board.style.gridTemplateRows = `repeat(${boardSize}, 1fr)`;
 
 let amount = boardSize * boardSize
 
+
 for (let i = 0; i < amount; i++) {
     let square = document.createElement('div');
     square.addEventListener('mouseover', colorSquare)
@@ -20,6 +21,7 @@ for (let i = 0; i < amount; i++) {
 
 createBoard(16);
 
+//Change board size based on user input
 function changeSize(input) {
     if(input >= 2 && input <= 100){
         createBoard(input);
@@ -28,7 +30,6 @@ function changeSize(input) {
     }
     
 }
-
 
 function colorSquare() {
     if (color === 'random') {
@@ -40,4 +41,10 @@ function colorSquare() {
 
 function changeColor(choice) {
     color = choice;
+}
+
+function resetBoard() {
+    let board = document.querySelector('.board');
+    let squares = board.querySelectorAll('div');
+    squares.forEach((div) => div.remove());
 }
