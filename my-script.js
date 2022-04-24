@@ -1,5 +1,5 @@
 let color = 'black';
-
+let click = true
 //Creating dynamic board size
 function createBoard(boardSize) {
 let board = document.querySelector('.board');
@@ -32,10 +32,12 @@ function changeSize(input) {
 }
 
 function colorSquare() {
-    if (color === 'random') {
-        this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%`;
-    } else {
-        this.style.backgroundColor = color;
+    if (click) {
+        if (color === 'random') {
+            this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%`;
+        } else {
+            this.style.backgroundColor = color;
+        }
     }
 }
 
@@ -48,3 +50,15 @@ function resetBoard() {
     let squares = board.querySelectorAll('div');
     squares.forEach((div) => div.style.backgroundColor = 'white');
 }
+
+//Click toggles the mouse color on/off
+document.querySelector('body').addEventListener('click', (e) => {
+    if(e.target.tagName != 'BUTTON') {
+        click = !click;
+        if (click) {
+            document.querySelector('.mode').textContent = "Mode: Coloring"
+        } else {
+            document.querySelector('.mode').textContent = "Mode: Not Coloring"
+        }
+    }
+});
