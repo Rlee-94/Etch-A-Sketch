@@ -1,3 +1,4 @@
+let color = 'black';
 
 //Creating dynamic board size
 function createBoard(boardSize) {
@@ -9,9 +10,10 @@ board.style.gridTemplateRows = `repeat(${boardSize}, 1fr)`;
 
 let amount = boardSize * boardSize
 
-for (let i =0; i<amount; i++) {
+for (let i = 0; i < amount; i++) {
     let square = document.createElement('div');
-    square.style.backgroundColor = 'blue';
+    square.addEventListener('mouseover', colorSquare)
+    square.style.backgroundColor = 'white';
     board.insertAdjacentElement("beforeend", square);
   }
 }
@@ -19,10 +21,23 @@ for (let i =0; i<amount; i++) {
 createBoard(16);
 
 function changeSize(input) {
-    if(input >=2 && input <=100){
+    if(input >= 2 && input <= 100){
         createBoard(input);
     } else {
         console.log('ERROR: Value must be between 2 and 100')
     }
     
+}
+
+
+function colorSquare() {
+    if (color === 'random') {
+        this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%`;
+    } else {
+        this.style.backgroundColor = color;
+    }
+}
+
+function changeColor(choice) {
+    color = choice;
 }
