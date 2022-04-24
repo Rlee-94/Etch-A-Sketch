@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch-A-Sketch</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reset.css">
     <script src="my-script.js" defer></script>
 </head>
 <body>
@@ -22,7 +23,10 @@
             </div>
             <div>
                 <input type="text" placeholder="Size of Board" value="16" onchange="changeSize(this.value)" >
-                <button>Set</button>
+                <button>Set Size</button>
+            </div>
+            <div class="error">
+                Input must be between 2 and 100
             </div>
         </div>
     </div>

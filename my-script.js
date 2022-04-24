@@ -24,9 +24,10 @@ createBoard(16);
 //Change board size based on user input
 function changeSize(input) {
     if(input >= 2 && input <= 100){
+        document.querySelector('.error').style.display = 'none'
         createBoard(input);
     } else {
-        console.log('ERROR: Value must be between 2 and 100')
+        document.querySelector('.error').style.display = 'flex'
     }
     
 }
