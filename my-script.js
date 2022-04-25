@@ -1,5 +1,6 @@
 let color = 'black';
 let click = true
+
 //Creating dynamic board size
 function createBoard(boardSize) {
 let board = document.querySelector('.board');
@@ -54,6 +55,9 @@ function resetBoard() {
 
 //Click toggles the mouse color on/off
 document.querySelector('body').addEventListener('click', (e) => {
+    if (e.target.id === 'reset'){
+        document.querySelector('.mode').textContent = "Mode: Coloring (click to toggle)"
+    }
     if(e.target.tagName != 'BUTTON') {
         click = !click;
         if (click) {
@@ -63,3 +67,4 @@ document.querySelector('body').addEventListener('click', (e) => {
         }
     }
 });
+

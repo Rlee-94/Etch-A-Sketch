@@ -12,17 +12,17 @@
 <body>
     <div class="grid-container">
         <div class="title"><h1>Etch A Sketch</h1></div>
-        <div class="mode">Mode: Coloring</div>
+        <div class="mode">Mode: Coloring  (click to toggle)</div>
         <div class="content">
             <div class="board"></div>
             <div class="buttons">
-                <button onclick="changeColor('black')">Black</button>
-                <button onclick="changeColor('white')">Eraser</button>
-                <button onclick="changeColor('random')">Random</button>
-                <button onclick="resetBoard()">Reset</button>
+                <button  id="black" onclick="changeColor('black')">Black</button>
+                <button id="eraser" onclick="changeColor('white')">Eraser</button>
+                <button id="color" onclick="changeColor('random')">Color</button>
+                <button id="reset" onclick="resetBoard()" id="reset">Reset</button>
             </div>
             <div>
-                <input type="text" placeholder="Size of Board" value="16" onchange="changeSize(this.value)" >
+                <input type="text" placeholder="Change Board Size"  onchange="changeSize(this.value)" class="text-box">
                 <button>Set Size</button>
             </div>
             <div class="error">
