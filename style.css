@@ -103,11 +103,15 @@ button:hover {
        #E7484F 100%
       
      );
-   animation:slidebg 8s linear infinite;
+   animation:slidebg 10s linear infinite;
  }
  
  @keyframes slidebg {
    to {
      background-position:20vw;
    }
+ }
+
+ #error {
+     margin-bottom: 20px
  }
