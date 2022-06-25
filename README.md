@@ -1,6 +1,6 @@
 # Etch-A-Sketch
 
-Creating a second landing page as a project using BootStrap.
+Creating a functional Etch A Sketch that can swap between color/black, erase, and has the ability to change the grid size.
 
 🔗 **Live preview:** [here](https://rlee-94.github.io/Etch-A-Sketch/)
 
